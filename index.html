@@ -21,7 +21,6 @@
         * {
             margin: 0;
             padding: 0;
-            box-style: border-box;
             box-sizing: border-box;
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
@@ -77,12 +76,9 @@
 
         /* Hero */
         .hero {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            align-items: center;
-            gap: 3rem;
+            text-align: center;
             padding: 5rem 8% 4rem;
-            max-width: 1300px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
@@ -101,43 +97,19 @@
         .hero-text p {
             color: var(--text-muted);
             font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            background: var(--primary);
-            color: #fff;
-            padding: 0.8rem 1.8rem;
-            border-radius: 999px;
-            text-decoration: none;
-            font-weight: 600;
-            box-shadow: 0 10px 20px rgba(185, 28, 28, 0.25);
-            display: inline-block;
-            transition: transform 0.3s;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.15);
+            margin-bottom: 0;
         }
 
         /* Sections */
         section {
-            padding: 5rem 8%;
-            max-width: 1300px;
+            padding: 4rem 8%;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 3.5rem;
+            margin-bottom: 3rem;
         }
 
         .section-title h2 {
@@ -151,29 +123,22 @@
             color: var(--text-muted);
         }
 
-        /* Content Grid */
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
+        /* Content Card (Image on top, text below) */
+        .content-card {
             background: #fff;
-            padding: 3rem;
+            padding: 2.5rem;
             border-radius: 24px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
             border: 1px solid rgba(226, 232, 240, 0.8);
             margin-bottom: 3rem;
         }
 
-        .content-grid.reverse {
-            grid-template-columns: 1fr 1fr;
-        }
-
-        .content-grid img, .content-grid video {
+        .content-card img, .content-card video {
             width: 100%;
-            height: 300px;
+            height: 380px;
             object-fit: cover;
             border-radius: 16px;
+            margin-bottom: 2rem;
         }
 
         .info-box h3 {
@@ -185,7 +150,7 @@
 
         .info-box p {
             color: var(--text-muted);
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             font-size: 0.98rem;
         }
 
@@ -204,11 +169,11 @@
 
         /* Responsive */
         @media (max-width: 900px) {
-            .hero, .content-grid, .content-grid.reverse {
-                grid-template-columns: 1fr;
-            }
             .nav-links {
                 display: none;
+            }
+            .content-card img, .content-card video {
+                height: 250px;
             }
         }
     </style>
@@ -229,10 +194,6 @@
         <div class="hero-text">
             <h1>Kỷ Niệm 40 Năm <span>Thành Lập Trường THPT Đồng Hỷ</span></h1>
             <p>Hành trình 40 năm xây dựng và trưởng thành (1986 - 2026). Nơi hội tụ niềm tự hào, tri ân các thế hệ thầy cô và lan tỏa tinh thần tuổi trẻ năng động.</p>
-            <a href="#yk-t" class="btn">Khám Phá Ngay</a>
-        </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=80" alt="Trường học kỷ niệm">
         </div>
     </header>
 
@@ -242,14 +203,12 @@
             <h2>1. Ý Tưởng & Nội Dung Trại Kỷ Niệm</h2>
             <p>Sự kết hợp hoàn hảo giữa truyền thống lịch sử và không gian sáng tạo của tuổi trẻ</p>
         </div>
-        <div class="content-grid">
+        <div class="content-card">
+            <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1000&q=80" alt="Hội trại học sinh">
             <div class="info-box">
                 <h3>Không Gian Trại Sáng Tạo</h3>
                 <p>Khu vực cắm trại được thiết kế mang đậm dấu ấn tự hào 40 năm. Cổng trại lấy cảm hứng từ biểu tượng tri thức và khát vọng vươn xa của các thế hệ học sinh Đồng Hỷ.</p>
                 <p>Nội dung bao gồm các hoạt động trưng bày truyền thống, trò chơi dân gian, gian hàng tuổi hồng và đêm hội văn nghệ tri ân đầy cảm xúc.</p>
-            </div>
-            <div>
-                <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=800&q=80" alt="Hội trại học sinh">
             </div>
         </div>
     </section>
@@ -260,10 +219,8 @@
             <h2>2. Quá Trình Phát Triển Trường THPT Đồng Hỷ</h2>
             <p>40 năm bền bỉ gieo hạt giống tri thức trên quê hương Đồng Hỷ</p>
         </div>
-        <div class="content-grid reverse">
-            <div>
-                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80" alt="Lịch sử trường THPT Đồng Hỷ">
-            </div>
+        <div class="content-card">
+            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1000&q=80" alt="Lịch sử trường THPT Đồng Hỷ">
             <div class="info-box">
                 <h3>Từ Những Ngày Đầu Đến Hôm Nay</h3>
                 <p>Trải qua 40 năm xây dựng và phát triển, trường THPT Đồng Hỷ đã vượt qua bao khó khăn, không ngừng nâng cao chất lượng dạy và học.</p>
@@ -278,14 +235,12 @@
             <h2>3. Tập Thể Lớp 11A2 Năng Động</h2>
             <p>Đoàn kết, sáng tạo và luôn dẫn đầu trong các phong trào thi đua</p>
         </div>
-        <div class="content-grid">
+        <div class="content-card">
+            <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1000&q=80" alt="Lớp 11A2">
             <div class="info-box">
                 <h3>Sức Trẻ & Tinh Thần Đồng Hỷ</h3>
                 <p>Tập thể lớp 11A2 luôn tràn đầy nhiệt huyết, nổi bật với thành tích học tập tốt và tinh thần tham gia nhiệt tình trong mọi hoạt động hướng tới kỷ niệm 40 năm thành lập trường.</p>
                 <p>Mỗi thành viên trong lớp đều là một mảnh ghép đầy màu sắc tạo nên một tập thể đoàn kết và vững mạnh.</p>
-            </div>
-            <div>
-                <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=800&q=80" alt="Lớp 11A2">
             </div>
         </div>
     </section>
@@ -296,10 +251,8 @@
             <h2>4. Tập Thể Lớp 11A5 Sáng Tạo</h2>
             <p>Nơi lưu giữ những kỷ niệm đẹp đẽ nhất của lứa tuổi học trò</p>
         </div>
-        <div class="content-grid reverse">
-            <div>
-                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Lớp 11A5">
-            </div>
+        <div class="content-card">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=80" alt="Lớp 11A5">
             <div class="info-box">
                 <h3>Dấu Ấn Đặc Biệt Tại Ngày Hội Trại</h3>
                 <p>Lớp 11A5 mang đến hội trại năm nay sự sáng tạo độc đáo trong việc trang trí lều trại, các tiết mục văn nghệ đặc sắc cùng sự nhiệt tình trong từng góc nhỏ của sự kiện.</p>
@@ -308,8 +261,7 @@
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Chào Mừng Kỷ Niệm 40 Năm Thành Lập Trường THPT Đồng Hỷ. Được thực hiện bởi <strong>kimoanh2006cbvn-star</strong>.</p>
+   
     </footer>
 
 </body>
